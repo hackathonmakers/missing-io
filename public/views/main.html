@@ -1,3 +1,59 @@
 <div class="row">
-  <h2> La difusión es la base de la solución.</h2>
+  <h1>Difundi un caso y ayuda a encontrarlos </h1>
+  <h4>Ahora podes hacer tu aporte</h4>
 </div>
+<div class="row" ng-hide="hidemain()">
+  <div class="six columns">
+    <div class="large primary btn">
+      <a href="" ng-click="showList()">Aleatorio</a></div>
+  </div>
+  <div class="six columns">
+     <div class="large primary btn">
+      <a href="" ng-click="showList()">En tu ciudad</a>
+    </div>
+    <div class="field">
+      <input class="large input" type="text" placeholder="Text input" />
+    </div>
+  </div>
+</div>
+
+
+<div class="row" ng-show="onSearch">
+
+  <div class="row" ng-repeat="profile in list">
+
+     <div class="two columns">
+      <div class="image circle">
+        <img ng-src="http://www.missingchildren.org.ar/imagench/leivafedericocarlos2.jpg"/>
+      </div>
+    </div>
+    <div class="eleven columns">
+    <h3>
+        <a href="" ng-click="showProfile(profile)">{{profile.name}}</a>
+      </h3>
+    </div>
+  </div>
+
+</div>
+<div class="row"  ng-show="onDetail">
+    <div class="two columns">
+      <div class="image circle">
+        <img ng-src="{{activeProfile.photo}}"/>
+      </div>
+    </div>
+    <div class="eight columns">
+        <div class="row">
+          <h2> <strong> {{activeProfile.name}}</strong></h2>
+          <h4> Despareció hace en 13 años </h4>
+          <h5> Hoy debe tener 15 años </h5>
+        </div>
+        <div class="row">
+             <ul class="socbtns">
+              <li><div class="btn twitter"><a target="_blank" href="">Twitter</a></div></li>
+              <li><div class="btn facebook"><a target="_blank" href="">Facebook</a></div></li>
+                <li><div class="btn primary"><a target="_blank" href="">Agrega un banner!</a></div></li>
+              <li><div class="btn danger"><a target="_blank" href="">Imprimi un poster</a></div></li>
+            </ul>
+        </div>
+      </div>
+    </div>
