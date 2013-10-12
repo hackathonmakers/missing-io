@@ -4,7 +4,9 @@
  */
 
 var express = require('express')
-  , routes = require('./routes')
+  , controllers = require('./routes/controllers/index.js')
+  , profiles = require('./routes/API/profiles.js')
+  , adapters = require('./routes/API/adapters.js')
   , http = require('http')
   , path = require('path');
 
@@ -26,7 +28,17 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
+//routes
+app.get('/', controllers.index);
+app.get('/encontremos/{:name}', controllers.details);
+
+
+//API
+app.post('/api/v1/fetch/missingchildren', adapters.missingchildren);
+app.get('/api/v1/profiles/random/:count?', profiles.random);
+
+
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
