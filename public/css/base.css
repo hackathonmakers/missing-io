@@ -1,0 +1,148 @@
+
+html {
+-webkit-font-smoothing: antialiased;
+}
+
+body {margin:0; padding: 0; font-family: "Open Sans", Arial, sans-serif;}
+
+
+p {
+font-size: 1.4em;
+font-weight: 300;
+color: #333;
+line-height: 1.8em;
+padding-top:1em;
+padding-bottom:1.8em;
+}
+
+a, a:visited {
+text-decoration: none;
+/*color: #585858;*/
+}
+
+/*
+a:link    {color:rgb(255, 165, 0); font-weight: 600;}
+a:visited {color:rgb(255, 165, 0); font-weight: 600;}
+a:hover   {color:rgb(204, 204, 204);}
+a:active  {color:rgb(255, 165, 0); font-weight: 600;}
+*/
+
+
+h1 {
+font-size: 2.2em;
+line-height: 1.4em;
+padding-top:1em;
+}
+h2 {
+font-size: 22px;
+}
+h3 {
+font-size: 24px;
+font-family: 'Crete Round', Georgia, serif;
+font-weight: 400;
+padding: 20px 0;
+}
+h4 {
+font-size: 18px;
+}
+h5 {
+font-size: 16px;
+padding-bottom: 10px;
+}
+h6 {
+font-size: 14px;
+padding-bottom: 10px;
+font-weight: bold;
+}
+
+ul {
+font-size: 14px;
+margin: 7px 0;
+padding-left: 10px;
+}
+ul li {
+margin-bottom: 5px;
+}
+
+.wrapper {
+background-color: #fff;
+margin-bottom: -4em;
+padding-bottom: 3em;
+padding-top: 4em;
+height: auto;
+}
+.container body .clear {
+width: 100%;
+float: left;
+clear: both;
+margin: 20px 0;
+}
+.one-third {
+text-align: center;
+}
+
+header {
+width: 100%;
+margin: 0;
+padding: 0;
+}
+
+header nav {
+width: 100%;
+float: left;
+margin: 0;
+padding: 20px 0 20px;
+background: none;
+position: relative;
+z-index: 1;
+color: #fff;
+font-weight: 400;
+position: fixed;
+background-color: rgba(0, 0, 0, 0.3);
+height: 14px;
+}
+
+
+/* -------------------
+*  RESPOSIVE ELEMENTS
+*  ------------------- */
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+
+header h2 {display: none;}
+header .slogan {padding-top: 40px;}
+
+nav .container .logo {margin-bottom: 20px; text-align: center;}
+
+.toptitle p {width: 400px;}
+.rgb(255, 165, 0) p {width: 400px;}
+
+form, label, input  {width: 400px;}
+input[type="submit"] {width: 402px;}
+textarea {width: 380px;}
+
+.container .one-third.column, .container .eight.columns, .container .four.columns {margin-bottom: 40px;}
+}
+
+
+
+@media only screen and (max-width: 767px) {
+
+header {height: 310px;}
+header h2, header .six.columns {display: none;}
+header .slogan {padding: 30px 0;}
+
+
+nav .container .logo {margin-bottom: 20px; text-align: center;}
+
+.rgb(255, 165, 0) p {width: 200px;}
+.toptitle p {width: 300px;}
+.toptitle h2 {width: 100%; margin: 20px 0 50px; text-align: center; text-shadow: none; font-size: 2em;}
+
+
+form, label, input  {width: 300px;}
+input[type="submit"] {width: 302px;}
+textarea {width: 280px;}
+
+.container .one-third.column, .container .eight.columns, .container .four.columns {margin-bottom: 40px;}
+}
+

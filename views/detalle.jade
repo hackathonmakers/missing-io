@@ -1,0 +1,26 @@
+extends layout
+
+block meta
+    meta(name="keywords", content="fertility, insurance, emotions, diagnosis, cancer navigation, cancer, LIVESTRONG Foundation, LIVESTRONG, LIVESTRONG Day, LIVESTRONG Challenge, wristbands, yellow wristbands, Team LIVESTRONG")
+    meta(property="og:title", content="LIVESTRONG Day - #{detail.clearTitle}")
+    meta(property="og:type", content="non_profit")
+    meta(property="og:url", content="http://#{BASE}/fact/#{detail.key}")
+    meta(property="og:site_name", content="LIVESTRONG Day 2013")
+    meta(property="og:description", content=detail.fbdescription)
+    meta(property="og:image",content="http://#{BASE}/img/facts/#{detail.key}.png")
+    meta(property="fb:app_id", content="#{FACEBOOK_APPID}")
+    meta(name="twitter:card", content="summary_large_image")
+    meta(name="twitter:site", content="@LIVESTRONG")
+    meta(name="twitter:creator", content="@LIVESTRONG")
+    meta(name="twitter:title", content="LIVESTRONG Day - #{detail.clearTitle}")
+    meta(name="twitter:description", content=detail.fbdescription)
+    meta(name="twitter:image", content="http://#{BASE}/img/facts/#{detail.key}.png")
+
+
+
+block content
+    div(ng-app="missing-io",class="fullheight")
+        div(ng-view, class="fullheight ng-scope-view")
+block scripts
+    script(src='/js/apps/core/controllers/detalle.js')
+    script(src='/js/apps/detalle/app.js')
