@@ -11,6 +11,10 @@ angular.module('missing-io', ['missing-io.controllers', 'missing-io.services'])
     templateUrl: '/views/detalle.html',
     controller: 'caseController'
   })
+   .when('/banners/:name', {
+    templateUrl: '/views/banners.html',
+    controller: 'bannerController'
+  })
   .when('/', {
     templateUrl: '/views/start.html',
     controller: 'startController'

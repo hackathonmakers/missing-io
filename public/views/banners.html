@@ -1,0 +1,19 @@
+<div class="row">
+  <h3> Pone estos banners en tu pagina</h3>
+  <h2> {{activeProfile.name}} </h2>
+  <div class="eight columns">
+  <h1> 468 x 90 </h1>
+
+  <iframe style="width: 468px; height: 90px; overflow: hidden; border: 0px; " ng-src="https://missing-io.herokuapp.com/apps/banners/468/{{activeProfile.shortName}}"></iframe>
+
+  <h1> 140 x 220</h1>
+
+  <iframe style="width: 140px; height: 220px; overflow: hidden; border: 0px; " ng-src="https://missing-io.herokuapp.com/apps/banners/140/{{activeProfile.shortName}}"></iframe>
+  </div>
+
+      <h2>
+       <div class="large success btn">
+          <a ng-href="#/encontremos/{{activeProfile.shortName}}" >Volver</a>
+        </div>
+      </h2>
+</div>

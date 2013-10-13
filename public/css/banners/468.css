@@ -5,10 +5,14 @@ body{
   height:90px;
   display:block;
 }
-.banner{
+.banner-container{
   max-width: 468px !important;
   width:468px  !important;
   max-height:90px !important;
   height:90px !important;
   display:block  !important;
+}
+
+[class*="column"] + [class*="column"]:last-child {
+  float: left !important;
 }
