@@ -16,50 +16,33 @@ block meta
     meta(name="twitter:description", content="Con tu ayuda, podemos encontrar a #{profile.name}. Comparti este link y sumá tu granito de arena.")
     meta(name="twitter:image",content="#{profile.photo}")
 
+block styles
+    link(href='/css/banners/140.css', rel='stylesheet', type='text/css')
+
 block content
-    div(class="row")
-        h1 Personas Perdidas
-    div(ng-app="missing-io",ng-init="profile = #{profileJson}",class="fullheight")
+    div(class="banner-container", ng-app="missing-io",ng-init="profile = #{profileJson}",class="fullheight")
         div(ng-controller="caseController", class="row")
-            div(class="two columns")
+            div(class="eight columns")
                 div(class="image circle")
                     img(src="#{profile.photo}")
+
             div(class="eight columns")
                 div(class="row")
-                h2 Encontremos a
-                    strong  #{profile.name}
-                h4 Despareció en #{profile.place} hace {{profile.formatedSince}}
-                h5 Hoy tiene #{profile.now} años.
-                div(class="row")
-                    h5
-                        strong Compartí ahora y ayuda!
+                h5
+                    div
+                        strong  #{profile.name}
+                    span falta desde {{profile.formatedSince}}.
+                    br
+                h6
+                    strong Con tu ayuda, alguien puede encontrarla.
+            div(class="eight columns")
                     ul(class="socbtns")
                         li
                             div(class="btn primary")
-                                a(target="_blank",ng-click="tweet()",ref="") Twitter
+                                a(target="_blank",ng-click="tweet()",ref="") Twiteá
                             div(class="btn facebook")
-                                a(target="_blank",ng-click="facebook()",ref="") Facebook
-                            div(class="btn secondary")
-                                a(target="_blank",ng-click="banners()",ref="") Agrega un banner
-                            div(class="btn danger")
-                                a(target="_blank",ng-click="posters()", ref="") Imprimi un poster
-            div(class="four columns")
-                h2 Podes ayudar mas!
-                    div(class="large success btn")
-                        a(href="/") Busca mas casos!
-        div(class="row")
-            div(class="ten columns")
-                 h2 ¿Sabes algo sobre esta persona?
-                    strong Contactate ahora
-                 ul
-                    li
-                        h3
-                            a(href="http://www.missingchildren.org.ar/", target="_blank") Missing Children
-                                small 0 800 333 5000
-                    li
-                        h3
-                            a(href="http://www.personasperdidas.org.ar/", target="_blank") Red Solidaria
-                                small (011) 4450-8204
+                                a(target="_blank",ng-click="facebook()",ref="") Shareá
+
 
 block scripts
     script(src='/js/apps/detalle/controllers/detalle.js')

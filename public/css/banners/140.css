@@ -1,0 +1,16 @@
+body{
+  max-width: 140px !important;
+  width:140px  !important;
+  max-height:200px !important;
+  height:200px !important;
+  display:block  !important;
+  overflow: hidden;
+}
+.banner-container{
+  max-width: 140px !important;
+  width:140px  !important;
+  max-height:200px !important;
+  height:200px !important;
+  display:block  !important;
+  overflow: hidden;
+}
