@@ -30,6 +30,8 @@ block content
                 h4 Despareció hace en #{profile.place}
                 h5 Hoy tiene #{profile.now}
                 div(class="row")
+                    h5
+                        strong Comparti ahora y ayuda!
                     ul(class="socbtns")
                         li
                             div(class="btn primary")
@@ -40,6 +42,10 @@ block content
                                 a(target="_blank",ng-click="banners()",ref="") Banners
                             div(class="btn danger")
                                 a(target="_blank",ng-click="posters()", ref="") Posters
+            div(class="four columns")
+                h2 Podes ayudar mas!
+                    div(class="large success btn")
+                        a(href="/") Busca mas casos!
         div(class="row")
             div(class="ten columns")
                  h2 ¿Sabes algo sobre esta persona?
