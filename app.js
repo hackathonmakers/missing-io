@@ -5,6 +5,8 @@
 
 var express = require('express')
   , controllers = require('./routes/controllers/index.js')
+  , banners = require('./routes/controllers/banners.js')
+
   , profiles = require('./routes/API/profiles.js')
   , adapters = require('./routes/API/adapters.js')
   , http = require('http')
@@ -31,6 +33,9 @@ if ('development' == app.get('env')) {
 //routes
 app.get('/', controllers.index);
 app.get('/encontremos/:name', controllers.details);
+
+app.get('/apps/banners/140/:name?', banners.banner140);
+app.get('/apps/banners/468/:name?', banners.banner468);
 
 
 //API
