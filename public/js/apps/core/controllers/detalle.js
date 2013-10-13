@@ -5,8 +5,9 @@ missingio.controller('caseController', function ($scope,$routeParams,$location,p
 
  $scope.name = $routeParams.name;
 
- profileService.$routeParams($scope.name, function(p){
+ profileService.getByShortName($scope.name, function(p){
     $scope.activeProfile =  p;
+    $scope.onDetail = true;
  })
 
 });

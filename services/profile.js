@@ -8,12 +8,17 @@ exports.models = {};
 //Schema City
 var ProfileSchema = mongoose.Schema({
     photo: String,
-    name: String,
-    since: String,
-    born: String,
-    where: String,
-    shortName: String,
+              founded : Boolean,
+              name: String,
+              since: String,
+              photoYear: String,
+              now: String,
+              born: String,
+              place: String,
+              shortName: String
 })
+
+
 var Profile = mongoose.model('Profiles', ProfileSchema);
 exports.models.Profile = Profile;
 
@@ -26,7 +31,7 @@ exports.clear = function(callback){
 };
 
 exports.getAll = function(count, callback){
-    var query = Profile.find().exec(function (err, docs){
+    var query = Profile.find({ found: false }).exec(function (err, docs){
         if (docs.length  > 0 ) {
               callback(docs);
         }
