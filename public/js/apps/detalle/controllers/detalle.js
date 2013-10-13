@@ -12,8 +12,18 @@ var profile = $scope.profile;
       }
   $scope.tweet = function(){
 
-  }
-  $scope.share = function(){
+      var first = $scope.profile.name.split(" ")[0];
+      var link = " http://missing-io.herokuapp.com/encontremos/" + $scope.profile.shortName;
+
+      var text = first + " falta de su casa  " + profile.formatedSince + ". RT para ayudar a encontrarla "   + "#missingio " +link;
+
+      window.open("https://twitter.com/intent/tweet?original_referer=" + encodeURIComponent(link)+"&source=tweetbutton&text=" + encodeURIComponent(text),
+                  "tweet","location=0,status=0,scrollbars=0, width=780,height=560");
+  };
+  $scope.facebook = function(){
+    var link = " http://missing-io.herokuapp.com/encontremos/" + $scope.profile.shortName;
+    var href="https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(link);
+    window.open(href, "facebook","location=0,status=0,scrollbars=0, width=780,height=560");
 
   }
   $scope.banners = function(){
