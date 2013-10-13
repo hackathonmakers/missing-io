@@ -28,7 +28,7 @@ missingio.controller('mainController', function ($scope,$location,profileService
   $scope.searchby = function(){
     $scope.onSearch = true;
     $scope.onDetail = false;
-    profileService.getFrom(10, function(data){
+    profileService.getFrom($scope.city, function(data){
         $scope.list = data;
     });
   }

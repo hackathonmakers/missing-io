@@ -52,6 +52,19 @@ exports.getAll = function(count, callback){
         }
     });
 };
+exports.getFrom = function(place, callback){
+    var query = Profile.find({place:  { $regex: new RegExp(place, "i")}})
+      .where('founded')
+      .equals(false)
+      .exec(function (err, docs){
+        if (docs.length  > 0 ) {
+              callback(docs);
+        }
+        else {
+            callback([]);
+        }
+    });
+};
 exports.getByShortName = function(shortName, callback){
     var query = Profile.findOne({ shortName: shortName }).exec(function (err, doc){
         callback(doc);

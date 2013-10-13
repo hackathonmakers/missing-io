@@ -13,7 +13,7 @@
       <a href="" ng-click="searchby()">Dame uno en mi ciudad</a>
     </div>
     <div class="field">
-      <input class="large input" type="text" placeholder="Parana" />
+      <input ng-model="city" class="large input" type="text" placeholder="Parana" />
     </div>
   </div>
 </div>
@@ -22,7 +22,7 @@
 <div class="row" ng-show="onSearch">
 
   <div class="row" ng-show="list.length === 0">
-    <h3><strong> No hay ningun dato :-( </strong> </h3>
+    <h3><strong> No hay ningun dato <span ng-show="city"> para {{city}} </span> :-( </strong> </h3>
     <h2> ¿Conocés algún caso? </h2>
     <h4> Podes contactar a cualquiera de estas organizaciones </h4>
     <ul>
@@ -30,6 +30,8 @@
        <li> <h3> <a href="http://http://www.personasperdidas.org.ar/" target="_blank">Red Solidaria</a> <small>(011) 4450-8204</small> </h3></li>
     </ul>
   </div>
+  <h3 ng-show="city"> Hay <strong>{{list.length}}</strong> personas que faltan en <span ng-show="city"> {{city}} </span></h3>
+
   <div class="row" ng-repeat="profile in list">
      <div class="two columns">
       <div class="image circle">

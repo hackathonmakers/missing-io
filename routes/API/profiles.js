@@ -16,6 +16,15 @@ exports.random = function(req, res){
   });
 
 };
+exports.from = function(req, res){
+  var city = req.params.city ? req.params.city : "Buenos Aires";
+  profileRepository.getFrom(city,function(data){
+      shf.shuffle(data);
+      res.json(data);
+      res.end();
+  });
+
+};
 exports.clear = function(req,res){
   profileRepository.clear(function(data){
       res.json(data);
