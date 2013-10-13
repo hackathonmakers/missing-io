@@ -27,6 +27,7 @@ var profile = $scope.profile;
 
   }
   $scope.banners = function(){
+      window.location = "/#/banners/fiama-micaelabarreto";
 
   }
 
