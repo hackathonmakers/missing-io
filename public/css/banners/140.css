@@ -14,3 +14,10 @@ body{
   display:block  !important;
   overflow: hidden;
 }
+
+  .column, .columns {
+    width: inherit !important;
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
