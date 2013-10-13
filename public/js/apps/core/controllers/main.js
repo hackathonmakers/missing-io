@@ -25,6 +25,13 @@ missingio.controller('mainController', function ($scope,$location,profileService
         $scope.list = data;
     });
   }
+  $scope.searchby = function(){
+    $scope.onSearch = true;
+    $scope.onDetail = false;
+    profileService.getFrom(10, function(data){
+        $scope.list = data;
+    });
+  }
 
   $scope.showProfile = function(profile){
     $scope.activeProfile = profile;
