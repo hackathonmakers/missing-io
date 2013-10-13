@@ -23,6 +23,14 @@ var Profile = mongoose.model('Profiles', ProfileSchema);
 exports.models.Profile = Profile;
 
 
+exports.getCount = function(callback){
+  var query = Profile.count({}, function(err,c){
+    var result = {
+      count:c
+    };
+    callback(result);
+  });
+};
 exports.clear = function(callback){
   exports.models.Profile.remove({}, function(err) {
      console.log('collection removed');

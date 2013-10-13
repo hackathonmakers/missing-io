@@ -4,11 +4,13 @@ var miadapter = require("../../services/missing-chiildren-adapter");
 var profileRepository = require("../../services/profile");
 var moment = require("moment");
 moment.lang('es');
+var shf = require('../../lib/shuffle.js');
 
 
 exports.random = function(req, res){
   var count = req.params.count ? req.params.count : 10;
   profileRepository.getAll(count,function(data){
+      shf.shuffle(data);
       res.json(data);
       res.end();
   });
@@ -16,6 +18,13 @@ exports.random = function(req, res){
 };
 exports.clear = function(req,res){
   profileRepository.clear(function(data){
+      res.json(data);
+      res.end();
+  });
+
+}
+exports.count = function(req,res){
+  profileRepository.getCount(function(data){
       res.json(data);
       res.end();
   });

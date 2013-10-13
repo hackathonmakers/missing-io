@@ -40,6 +40,8 @@ app.get('/api/v1/profiles/random/:count?', profiles.random);
 app.get('/api/v1/profiles/all/:count?', profiles.all);
 app.get('/api/v1/profiles/shortName/:name?', profiles.shortname);
 app.post('/api/v1/profiles/clear', profiles.clear);
+app.get('/api/v1/profiles/count', profiles.count);
+
 
 
 http.createServer(app).listen(app.get('port'), function(){

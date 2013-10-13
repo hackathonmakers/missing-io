@@ -18,7 +18,7 @@ block meta
 
 block content
     h1 Personas Perdidas
-    div(ng-app="missing-io",class="fullheight")
+    div(ng-app="missing-io",ng-init="profile = #{profileJson}",class="fullheight")
         div(class="row", ng-show="onDetail")
             div(class="two columns")
                 div(class="image circle")
@@ -26,9 +26,9 @@ block content
             div(class="eight columns")
                 div(class="row")
                 h2 Encontremos a
-                    strong #{profile.name}
-                h4 Despareció hace en 13 años
-                h5 Hoy debe tener 15 años
+                    strong  #{profile.name}
+                h4 Despareció hace en #{profile.place}
+                h5 Hoy tiene #{profile.now}
                 div(class="row")
                     ul(class="socbtns")
                         li

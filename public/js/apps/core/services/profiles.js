@@ -10,6 +10,12 @@ missingio.service('profileService', function($http) {
                  callback(data);
             });
         },
+        getCount: function(callback){
+            var url = "/api/v1/profiles/count";
+            $http.get(url).success(function(data) {
+                 callback(data);
+            });
+        },
         getByShortName: function(name, callback){
             var url = "/api/v1/profiles/shortName/" + name;
             $http.get(url).success(function(data) {
