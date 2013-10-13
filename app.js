@@ -38,6 +38,7 @@ app.post('/api/v1/fetch/missingchildren', adapters.missingchildren);
 
 app.get('/api/v1/profiles/random/:count?', profiles.random);
 app.get('/api/v1/profiles/all/:count?', profiles.all);
+app.get('/api/v1/profiles/shortName/:name?', profiles.shortname);
 app.post('/api/v1/profiles/clear', profiles.clear);
 
 

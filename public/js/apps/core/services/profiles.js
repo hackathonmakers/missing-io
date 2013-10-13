@@ -9,6 +9,12 @@ missingio.service('profileService', function($http) {
             $http.get(url).success(function(data) {
                  callback(data);
             });
+        },
+        getByShortName: function(name, callback){
+            var url = "/api/v1/profiles/shortName/" + name;
+            $http.get(url).success(function(data) {
+                 callback(data);
+            });
         }
     };
 });

@@ -28,3 +28,14 @@ exports.all = function(req,res){
   });
 
 }
+
+exports.shortname = function(req,res){
+  var name = req.params.name ? req.params.name : 10;
+
+ profileRepository.getByShortName(name,function(data){
+      res.json(data);
+      res.end();
+  });
+
+}
+

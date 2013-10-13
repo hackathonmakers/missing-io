@@ -38,39 +38,9 @@
     </div>
     <div class="eleven columns">
     <h3>
-        <a href="" ng-click="showProfile(profile)">{{profile.name}}</a>
+        <a href="#/encontremos/{{profile.shortName}}">{{profile.name}}</a>
       </h3>
     </div>
   </div>
 
-</div>
-<div class="row"  ng-show="onDetail">
-    <div class="two columns">
-      <div class="image circle">
-        <img ng-src="{{activeProfile.photo}}"/>
-      </div>
-    </div>
-    <div class="eight columns">
-        <div class="row">
-          <h2> <strong> {{activeProfile.name}}</strong></h2>
-          <h4> Despareció hace en 13 años </h4>
-          <h5> Hoy debe tener 15 años </h5>
-        </div>
-        <div class="row">
-             <ul class="socbtns">
-              <li><div class="btn twitter"><a target="_blank" href="">Twitter</a></div></li>
-              <li><div class="btn facebook"><a target="_blank" href="">Facebook</a></div></li>
-                <li><div class="btn primary"><a target="_blank" href="">Agrega un banner!</a></div></li>
-              <li><div class="btn danger"><a target="_blank" href="">Imprimi un poster</a></div></li>
-            </ul>
-        </div>
-      </div>
-
-    <div class="four columns">
-      <h2>No te gusta?
-       <div class="large success btn">
-      <a href="" ng-click="backToMain()">Empeza de nuevo..</a>
-      </div>
-      </h2>
-    </div>
 </div>

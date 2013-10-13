@@ -3,11 +3,11 @@
 angular.module('missing-io', ['missing-io.controllers', 'missing-io.services'])
 .config(function ($routeProvider) {
   $routeProvider
-  .when('/elegi', {
+  .when('/elegi/', {
     templateUrl: '/views/main.html',
     controller: 'mainController'
   })
-  .when('/caso', {
+  .when('/encontremos/:name', {
     templateUrl: '/views/detalle.html',
     controller: 'caseController'
   })

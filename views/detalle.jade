@@ -33,13 +33,13 @@ block content
                     ul(class="socbtns")
                         li
                             div(class="btn primary")
-                                a(target="_blank",ref="") Twitter
+                                a(target="_blank",ng-click="tweet()",ref="") Twitter
                             div(class="btn twitter")
-                                a(target="_blank",ref="") Facebook
+                                a(target="_blank",ng-click="facebook()",ref="") Facebook
                             div(class="btn secondary")
-                                a(target="_blank",ref="") Banners
+                                a(target="_blank",ng-click="banners()",ref="") Banners
                             div(class="btn danger")
-                                a(target="_blank",ref="") Posters
+                                a(target="_blank",ng-click="posters()", ref="") Posters
 block scripts
     script(src='/js/apps/core/controllers/detalle.js')
     script(src='/js/apps/detalle/app.js')
