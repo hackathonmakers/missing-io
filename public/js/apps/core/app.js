@@ -18,4 +18,7 @@ angular.module('missing-io', ['missing-io.controllers', 'missing-io.services'])
   .otherwise({
     redirectTo: '/'
   });
-});
+}).run(function ($rootScope) {
+
+    moment().lang('es');
+  });

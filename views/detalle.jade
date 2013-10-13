@@ -1,7 +1,7 @@
 extends layout
 
 block meta
-    meta(name="keywords", content="fertility, insurance, emotions, diagnosis, cancer navigation, cancer, LIVESTRONG Foundation, LIVESTRONG, LIVESTRONG Day, LIVESTRONG Challenge, wristbands, yellow wristbands, Team LIVESTRONG")
+    meta(name="keywords", content="extraviados, buscados, perdidos, sustra&iacute;dos, chicos, missing children, menor, menores, sustracci&oacute;n, desaparecido, prevenci&oacute;n")
     meta(property="og:title", content="Encontremos a #{profile.name}")
     meta(property="og:type", content="non_profit")
     meta(property="og:url", content="http://missing-io.herokuapp.com/encontremos/#{profile.shortName}")
@@ -40,6 +40,20 @@ block content
                                 a(target="_blank",ng-click="banners()",ref="") Banners
                             div(class="btn danger")
                                 a(target="_blank",ng-click="posters()", ref="") Posters
+        div(class="row")
+            div(class="ten columns")
+                 h2 ¿Sabes algo sobre esta persona?
+                    strong Contactate ahora
+                 ul
+                    li
+                        h3
+                            a(href="http://www.missingchildren.org.ar/", target="_blank") Missing Children
+                                small 0 800 333 5000
+                    li
+                        h3
+                            a(href="http://www.personasperdidas.org.ar/", target="_blank") Red Solidaria
+                                small (011) 4450-8204
+
 block scripts
     script(src='/js/apps/core/controllers/detalle.js')
     script(src='/js/apps/detalle/app.js')

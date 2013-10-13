@@ -5,8 +5,8 @@ var cheerio = require('cheerio');
 var fs = require('fs');
 var async = require('async');
 var profileRepository = require("../services/profile");
-
-
+var moment = require("moment");
+moment.lang('es');
 var request = require("request");
 
 
@@ -40,15 +40,36 @@ var profiles = [];
         if (!error && response.statusCode == 200) {
           try{
             var $cherio = cheerio.load(html);
+
             var photo = "http://www.missingchildren.org.ar/" + $cherio("#table5 img").first().attr("src");
+
             var name = $cherio("#table7 td").first().html().replace("<br>&nbsp;",'').trim();
+
             var founded =  name.indexOf("ENCONTRADA") > 0 ||  name.indexOf("ENCONTRADO") > 0;
+
             name = name.replace("FUE ENCONTRADA","");
             name = name.replace("FUE ENCONTRADO","");
+
             var since = $cherio($cherio("#table7 tr td")[2]).html().replace("<br>&nbsp;",'').trim();
-            var photoYear = $cherio($cherio("#table7 tr td")[5]).html().replace("<br>&nbsp;",'').trim();
-            var now = $cherio($cherio("#table7 tr td")[7]).html().replace("<br>&nbsp;",'').trim();
+            var sinceDate = moment(since.replace("de",'').replace("de",'').trim()).calendar();
+            if (sinceDate.indexOf("date") === -1){
+              since = sinceDate;
+            }
             var born = $cherio($cherio("#table7 tr td")[10]).html().replace("<br>&nbsp;",'').trim();
+            bornDate = moment(born.replace("de",'').replace("de",'').trim()).calendar();
+            if (bornDate.indexOf("date") === -1){
+              born = bornDate;
+            }
+            var photoYear = $cherio($cherio("#table7 tr td")[5]).html().replace("<br>&nbsp;",'').trim();
+            var pyInt = parseInt(photoYear);
+            if (pyInt !== NaN){
+              photoYear = pyInt;
+            }
+            var now = $cherio($cherio("#table7 tr td")[7]).html().replace("<br>&nbsp;",'').trim();
+            var nowInt = parseInt(now);
+            if (nowInt !== NaN){
+              now = nowInt;
+            }
             var place = $cherio($cherio("#table7 tr td")[13]).html().replace("<br>&nbsp;",'').trim();
 
             var shortName = name.toLowerCase()
@@ -70,16 +91,18 @@ var profiles = [];
             p.save(function (err) {
                           if (err) {
                              console.log(err);
+
                           }
                           else {
                               console.log("OK");
+                              console.log(p);
+                              profiles.push(p);
                           }
                       });
-            console.log(p);
-            profiles.push(p);
+
           }
           //TODO: HORRIBLE
-          catch(e){ console.log("ERROR", id);}
+          catch(e){ console.log("ERROR", e, id);}
           callback(profiles);
           cb();
 

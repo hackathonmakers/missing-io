@@ -11,8 +11,8 @@
     <div class="eight columns">
         <div class="row">
           <h2> <strong> Encontremos a {{activeProfile.name}}</strong></h2>
-          <h4> Despareció hace en 13 años </h4>
-          <h5> Hoy debe tener 15 años </h5>
+          <h4> Despareció en {{activeProfile.place}} {{activeProfile.formatedSince}}  </h4>
+          <h5 ng-show="activeProfile.now"> Hoy tiene {{activeProfile.now}} años </h5>
         </div>
         <div class="row">
              <ul class="socbtns">
