@@ -51,7 +51,11 @@ var profiles = [];
             var born = $cherio($cherio("#table7 tr td")[10]).html().replace("<br>&nbsp;",'').trim();
             var place = $cherio($cherio("#table7 tr td")[13]).html().replace("<br>&nbsp;",'').trim();
 
-            var shortName = name.toLower.replace(" ", "-");
+            var shortName = name.toLowerCase()
+              .replace(" ", "-")
+              .replace(" ", "")
+              .replace(" ", "")
+              .trim();
             var p = new profileRepository.models.Profile({
               photo: photo,
               founded : founded,
