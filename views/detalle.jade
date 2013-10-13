@@ -1,6 +1,7 @@
 
 extends layout
 
+
 block meta
     meta(name="keywords", content="extraviados, buscados, perdidos, sustra&iacute;dos, chicos, missing children, menor, menores, sustracci&oacute;n, desaparecido, prevenci&oacute;n")
     meta(property="og:title", content="Encontremos a #{profile.name}")
@@ -17,15 +18,19 @@ block meta
     meta(name="twitter:description", content="Con tu ayuda, podemos encontrar a #{profile.name}. Comparti este link y sumá tu granito de arena.")
     meta(name="twitter:image",content="#{profile.photo}")
 
+        
 block content
-    div(class="row")
+    header
+      a(href="/")
+        h1.logo Personas Perdidas en Argentina
+    div(class="row detail-header")
         h1 Personas Perdidas
     div(ng-app="missing-io",ng-init="profile = #{profileJson}",class="fullheight")
-        div(ng-controller="caseController", class="row")
+        div(ng-controller="caseController", class="row detail")
             div(class="two columns")
                 div(class="image circle")
                     img(src="#{profile.photo}")
-            div(class="eight columns")
+            div(class="twelve columns")
                 div(class="row")
                 h2 Encontremos a
                     strong  #{profile.name}
@@ -44,24 +49,31 @@ block content
                                 a(target="_blank",ng-click="banners()",ref="") Agrega un banner
                             div(class="btn danger")
                                 a(target="_blank",ng-click="posters()", ref="") Imprimi un poster
-            div(class="four columns")
-                h2 Podes ayudar mas!
-                    div(class="large success btn")
-                        a(href="/") Busca mas casos!
-        div(class="row")
-            div(class="ten columns")
-                 h2 ¿Sabes algo sobre esta persona?
-                    strong Contactate ahora
-                 ul
-                    li
-                        h3
-                            a(href="http://www.missingchildren.org.ar/", target="_blank") Missing Children
-                                small 0 800 333 5000
-                    li
-                        h3
-                            a(href="http://www.personasperdidas.org.ar/", target="_blank") Red Solidaria
-                                small (011) 4450-8204
 
+        div(class="row detail-more")
+            h2 Podes ayudar mas!
+            a(href="/", class="search-btn") Busca mas casos!
+
+        div(class="row detail-info")
+           h2 ¿Sabes algo sobre esta persona? 
+              strong Contactate ahora
+           ul
+              li
+                h3
+                  a(href="http://www.missingchildren.org.ar/", target="_blank") Missing Children
+                    small 0 800 333 5000
+              li
+                h3
+                  a(href="http://www.personasperdidas.org.ar/", target="_blank") Red Solidaria
+                    small (011) 4450-8204
+
+    footer
+      p info@missingchildren.org.arg
+      hr
+      p 0800 333 5500
+      hr
+      p Un projecto creado en #hackathonlitoral
+      
 block scripts
     script(src='/js/apps/detalle/controllers/detalle.js')
     script(src='/js/apps/core/services/profiles.js')

@@ -1,42 +1,39 @@
 
-<div class="row">
- <h1>Personas Perdidas </h1>
+<div class="row top-search search">
+  <h3> Ahora podés hacer tu aporte! </h3>
+  <hr />
 </div>
-<div class="row" ng-hide="hidemain()">
-  <h3> Busca un caso en el que ayudar </h3>
-  <div class="six columns">
-    <div class="large primary btn">
-      <a href="" ng-click="showList()">Dame uno cualquiera</a></div>
+<div class="row search" ng-hide="hidemain()">
+  <div class="row">
+    <h4> Búsqueda Aleatoria: </h4>
+    <a href="" class="search-btn" ng-click="showList()">Buscar</a>
   </div>
-  <div class="six columns">
-     <div class="large secondary btn">
-      <a href="" ng-click="searchby()">Dame uno en mi ciudad</a>
-    </div>
+  <div class="row">
+    <h4> Búsqueda por ciudad: </h4>
     <div class="field">
-      <input ng-model="city" class="large input" type="text" placeholder="Parana" />
+      <input class="large input" type="text" placeholder="Parana, Entre Rios, Buenos Aires" />
     </div>
+    <a href="" class="search-btn"  ng-click="showList()">Buscar</a>
   </div>
 </div>
-
 
 <div class="row" ng-show="onSearch">
-
-  <div class="row" ng-show="list.length === 0">
-    <h3><strong> No hay ningun dato <span ng-show="city"> para {{city}} </span> :-( </strong> </h3>
-    <h2> ¿Conocés algún caso? </h2>
+  <div class="row results empty" ng-show="list.length === 0">
+    <h2><strong> No se encontraron resultados. </strong> </h2>
+    <h3> ¿Conocés algún caso? </h3>
     <h4> Podes contactar a cualquiera de estas organizaciones </h4>
     <ul>
       <li> <h3> <a href="http://www.missingchildren.org.ar/" target="_blank">Missing Children</a> <small>0 800 333 5000</small> </h3></li>
        <li> <h3> <a href="http://http://www.personasperdidas.org.ar/" target="_blank">Red Solidaria</a> <small>(011) 4450-8204</small> </h3></li>
     </ul>
   </div>
-  <h3 ng-show="city"> Hay <strong>{{list.length}}</strong> personas que faltan en <span ng-show="city"> {{city}} </span></h3>
-
-  <div class="row" ng-repeat="profile in list">
+  <div class="row results">
+    <h3 ng-show="city"> Hay <strong>{{list.length}}</strong> personas que faltan en <span ng-show="city"> {{city}} </span></h3>
+  </div>
+  <div class="row results" ng-repeat="profile in list">
      <div class="two columns">
       <div class="image circle">
-              <img ng-src="{{profile.photo}}"/>
-
+       <img ng-src="{{profile.photo}}"/>
       </div>
     </div>
     <div class="eleven columns">

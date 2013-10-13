@@ -1,35 +1,28 @@
 
-<div class="row">
- <h1>Personas Perdidas </h1>
+<div class="row detail-header">
+ <h1> Personas Perdidas </h1>
 </div>
-<div class="row"  ng-show="onDetail">
+<div class="row detail" ng-show="onDetail">
     <div class="two columns">
       <div class="image circle">
         <img ng-src="{{activeProfile.photo}}"/>
       </div>
     </div>
-    <div class="eight columns">
+    <div class="twelve columns">
         <div class="row">
           <h2> Encontremos a  <strong>{{activeProfile.name}}</strong></h2>
-          <h4> Despareció en {{activeProfile.place}} {{activeProfile.formatedSince}}  </h4>
-          <h5 ng-show="activeProfile.now"> Hoy tiene {{activeProfile.now}} años </h5>
+          <h4> Despareció en {{activeProfile.place}} {{activeProfile.formatedSince}}.  </h4>
+          <h5 ng-show="activeProfile.now"> Hoy tiene {{activeProfile.now}} años. </h5>
         </div>
         <div class="row">
             <h5><strong>Compartí ahora y ayuda</strong></h5>
              <ul class="socbtns">
               <li><div class="btn primary"><a ng-click="tweet()" href="">Twitter</a></div></li>
               <li><div class="btn facebook"><a ng-click="facebook()" href="">Facebook</a></div></li>
-                <li><div class="btn secondary"><a href="">Agrega un banner!</a></div></li>
+                <li><div class="btn secondary"><a ng-href="#/banners/{{activeProfile.shortName}}">Agrega un banner!</a></div></li>
               <li><div class="btn danger"><a ng-href="#/banners/{{activeProfile.shortName}}">Imprimi un poster</a></div></li>
             </ul>
         </div>
       </div>
-
-    <div class="four columns">
-      <h2>No te gusta?
-       <div class="large success btn">
-      <a href="" ng-click="backToMain()">Empeza de nuevo..</a>
-      </div>
-      </h2>
-    </div>
+      <div class="row detail-info"><h2>¿Sabes algo sobre esta persona? <strong>Contactate ahora</strong></h2><ul><li><h3><a href="http://www.missingchildren.org.ar/" target="_blank">Missing Children<small>0 800 333 5000</small></a></h3></li><li><h3><a href="http://www.personasperdidas.org.ar/" target="_blank">Red Solidaria<small>(011) 4450-8204</small></a></h3></li></ul></div>
 </div>

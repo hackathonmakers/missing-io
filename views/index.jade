@@ -1,10 +1,19 @@
 extends layout
 block meta
-    meta(name="keywords", content="fertility, insurance, emotions, diagnosis, cancer navigation, cancer, LIVESTRONG Foundation, LIVESTRONG, LIVESTRONG Day, LIVESTRONG Challenge, wristbands, yellow wristbands, Team LIVESTRONG")
+    meta(name="keywords", content="Personas, perdidas, argentina, missing children, missing persons argentina, personas perdidas argentina")
 
 block content
-    div(ng-app="missing-io",class="")
+    header
+      a(href="/")
+        h1.logo Personas Perdidas en Argentina
+    div(ng-app="missing-io", class="")
         div(ng-view, class=" ng-scope-view")
+    footer
+      p info@missingchildren.org.arg
+      hr
+      p 0800 333 5500
+      hr
+      p Un projecto creado en #hackathonlitoral
 block scripts
     script(src='/js/apps/core/controllers/main.js')
     script(src='/js/apps/core/controllers/detalle.js')
