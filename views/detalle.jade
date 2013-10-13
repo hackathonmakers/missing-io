@@ -17,9 +17,10 @@ block meta
     meta(name="twitter:image",content="#{profile.photo}")
 
 block content
-    h1 Personas Perdidas
+    div(class="row")
+        h1 Personas Perdidas
     div(ng-app="missing-io",ng-init="profile = #{profileJson}",class="fullheight")
-        div(class="row", ng-show="onDetail")
+        div(ng-controller="caseController", class="row")
             div(class="two columns")
                 div(class="image circle")
                     img(src="#{profile.photo}")
@@ -36,12 +37,12 @@ block content
                         li
                             div(class="btn primary")
                                 a(target="_blank",ng-click="tweet()",ref="") Twitter
-                            div(class="btn twitter")
+                            div(class="btn facebook")
                                 a(target="_blank",ng-click="facebook()",ref="") Facebook
                             div(class="btn secondary")
-                                a(target="_blank",ng-click="banners()",ref="") Banners
+                                a(target="_blank",ng-click="banners()",ref="") Agrega un banner
                             div(class="btn danger")
-                                a(target="_blank",ng-click="posters()", ref="") Posters
+                                a(target="_blank",ng-click="posters()", ref="") Imprimi un poster
             div(class="four columns")
                 h2 Podes ayudar mas!
                     div(class="large success btn")
@@ -61,5 +62,6 @@ block content
                                 small (011) 4450-8204
 
 block scripts
-    script(src='/js/apps/core/controllers/detalle.js')
+    script(src='/js/apps/detalle/controllers/detalle.js')
+    script(src='/js/apps/core/services/profiles.js')
     script(src='/js/apps/detalle/app.js')
