@@ -3,13 +3,17 @@
 angular.module('missing-io', ['missing-io.controllers', 'missing-io.services'])
 .config(function ($routeProvider) {
   $routeProvider
-  .when('/', {
+  .when('/elegi', {
     templateUrl: '/views/main.html',
     controller: 'mainController'
   })
-  .when('/caso/', {
+  .when('/caso', {
     templateUrl: '/views/detalle.html',
     controller: 'caseController'
+  })
+  .when('/', {
+    templateUrl: '/views/start.html',
+    controller: 'startController'
   })
   .otherwise({
     redirectTo: '/'

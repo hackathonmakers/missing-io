@@ -30,13 +30,15 @@ if ('development' == app.get('env')) {
 
 //routes
 app.get('/', controllers.index);
-app.get('/encontremos/{:name}', controllers.details);
+app.get('/encontremos/:name', controllers.details);
 
 
 //API
 app.post('/api/v1/fetch/missingchildren', adapters.missingchildren);
-app.get('/api/v1/profiles/random/:count?', profiles.random);
 
+app.get('/api/v1/profiles/random/:count?', profiles.random);
+app.get('/api/v1/profiles/all/:count?', profiles.all);
+app.post('/api/v1/profiles/clear', profiles.clear);
 
 
 http.createServer(app).listen(app.get('port'), function(){

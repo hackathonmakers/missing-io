@@ -1,15 +1,16 @@
+
 <div class="row">
-  <h1>Difundi un caso y ayuda a encontrarlos </h1>
-  <h4>Ahora podes hacer tu aporte</h4>
+ <h1>Personas Perdidas </h1>
 </div>
 <div class="row" ng-hide="hidemain()">
+  <h3> Busca un caso en el que ayudar </h3>
   <div class="six columns">
     <div class="large primary btn">
-      <a href="" ng-click="showList()">Aleatorio</a></div>
+      <a href="" ng-click="showList()">Dame uno cualquiera</a></div>
   </div>
   <div class="six columns">
-     <div class="large primary btn">
-      <a href="" ng-click="showList()">En tu ciudad</a>
+     <div class="large secondary btn">
+      <a href="" ng-click="showList()">Dame uno en mi ciudad</a>
     </div>
     <div class="field">
       <input class="large input" type="text" placeholder="Text input" />
@@ -20,11 +21,19 @@
 
 <div class="row" ng-show="onSearch">
 
-  <div class="row" ng-repeat="profile in list">
+  <div class="row" ng-show="list.length === 0">
+    <h3><strong> No hay ningun dato :-( </strong> </h3>
+    <h2> ¿Conocés algún caso? </h2>
+    <h4> Podes contactar a cualquiera de estas organizaciones </h4>
+    <ul>
 
+    </ul>
+  </div>
+  <div class="row" ng-repeat="profile in list">
      <div class="two columns">
       <div class="image circle">
-        <img ng-src="http://www.missingchildren.org.ar/imagench/leivafedericocarlos2.jpg"/>
+              <img ng-src="{{profile.photo}}"/>
+
       </div>
     </div>
     <div class="eleven columns">
@@ -56,4 +65,12 @@
             </ul>
         </div>
       </div>
+
+    <div class="four columns">
+      <h2>No te gusta?
+       <div class="large success btn">
+      <a href="" ng-click="backToMain()">Empeza de nuevo..</a>
+      </div>
+      </h2>
     </div>
+</div>

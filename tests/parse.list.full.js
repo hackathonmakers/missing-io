@@ -45,7 +45,6 @@ console.log(url);
         now: now,
         born: born,
         place: place
-
       };
       console.log(p);
     }

@@ -5,3 +5,13 @@ html, body{
 	background: #ffffff;
 }
 
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+color: #267ED0;
+}
+a {
+color: #267ED0;
+text-decoration: none;
+outline: 0;
+line-height: inherit;
+}
